@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Manjusree ❤️</title>
 
 <style>
@@ -20,53 +21,81 @@ html, body {
 
 body {
     font-family: 'Noto Serif Tamil', serif;
+
     background:
         radial-gradient(circle at 20% 20%, rgba(255,120,160,.35), transparent 30%),
         radial-gradient(circle at 80% 80%, rgba(255,30,100,.25), transparent 35%),
         linear-gradient(135deg, #18000c, #4b001d, #160008);
+
     color: white;
     overflow-x: hidden;
 }
 
-/* Animated background */
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
 body::before {
     content: "";
     position: fixed;
     inset: 0;
+
     background:
         radial-gradient(circle, rgba(255,255,255,.08) 1px, transparent 1px);
+
     background-size: 35px 35px;
+
     animation: stars 12s linear infinite;
+
     pointer-events: none;
 }
 
 @keyframes stars {
-    from { transform: translateY(0); }
-    to { transform: translateY(35px); }
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(35px);
+    }
 }
 
-/* Floating hearts */
+/* =========================
+   FLOATING HEARTS
+========================= */
+
 .hearts {
     position: fixed;
     inset: 0;
+
     overflow: hidden;
     pointer-events: none;
+
     z-index: 1;
 }
 
 .heart {
     position: absolute;
     bottom: -50px;
+
     color: #ff5c93;
     font-size: 22px;
+
     animation: floatUp linear infinite;
+
     opacity: .75;
+
     filter: drop-shadow(0 0 8px #ff3377);
 }
 
 @keyframes floatUp {
+
     0% {
-        transform: translateY(0) rotate(0deg) scale(.7);
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.7);
+
         opacity: 0;
     }
 
@@ -79,259 +108,596 @@ body::before {
     }
 
     100% {
-        transform: translateY(-110vh) rotate(360deg) scale(1.4);
+        transform:
+            translateY(-110vh)
+            rotate(360deg)
+            scale(1.4);
+
         opacity: 0;
     }
 }
 
-/* Opening screen */
+/* =========================
+   OPENING SCREEN
+========================= */
+
 #opening {
     position: fixed;
+
     inset: 0;
+
     z-index: 10;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     padding: 25px;
+
     background:
-        radial-gradient(circle at center, #70002d, #21000f 65%, #090006);
-    transition: opacity 1s ease, visibility 1s ease;
+        radial-gradient(
+            circle at center,
+            #70002d,
+            #21000f 65%,
+            #090006
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
 .open-card {
+
     text-align: center;
+
     max-width: 380px;
+
     width: 100%;
+
     padding: 35px 25px;
+
     border-radius: 30px;
+
     background: rgba(255,255,255,.08);
+
     border: 1px solid rgba(255,255,255,.2);
+
     box-shadow:
         0 0 50px rgba(255,0,100,.3),
         inset 0 0 30px rgba(255,255,255,.04);
+
     backdrop-filter: blur(12px);
 }
 
 .envelope {
+
     font-size: 75px;
-    animation: heartbeat 1.5s infinite;
+
+    animation:
+        heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
-    0%,100% { transform: scale(1); }
-    15% { transform: scale(1.12); }
-    30% { transform: scale(1); }
-    45% { transform: scale(1.08); }
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
 }
 
 .open-card h1 {
+
     font-size: 28px;
-    margin: 15px 0 8px;
+
+    margin:
+        15px 0 8px;
+
     color: #ffd1df;
 }
 
 .open-card p {
+
     font-size: 15px;
+
     color: #ffc1d4;
+
     line-height: 1.8;
 }
 
 .open-btn {
+
     margin-top: 20px;
+
     border: none;
-    padding: 15px 30px;
+
+    padding:
+        15px 30px;
+
     border-radius: 50px;
+
     font-family: inherit;
+
     font-size: 16px;
+
     font-weight: bold;
+
     color: white;
+
     cursor: pointer;
-    background: linear-gradient(135deg, #ff1764, #c90046);
-    box-shadow: 0 0 25px rgba(255,0,90,.6);
-    animation: buttonGlow 2s infinite;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1764,
+            #c90046
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255,0,90,.6);
+
+    animation:
+        buttonGlow 2s infinite;
 }
 
 @keyframes buttonGlow {
+
     50% {
-        box-shadow: 0 0 40px rgba(255,0,90,.9);
+
+        box-shadow:
+            0 0 40px
+            rgba(255,0,90,.9);
     }
 }
 
 #opening.hide {
+
     opacity: 0;
+
     visibility: hidden;
 }
 
-/* Main letter */
+/* =========================
+   MAIN LETTER
+========================= */
+
 .main {
+
     position: relative;
+
     z-index: 2;
+
     max-width: 720px;
+
     margin: auto;
-    padding: 35px 18px 60px;
+
+    padding:
+        35px 18px 60px;
+
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 1.5s ease;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        all 1.5s ease;
 }
 
 .main.show {
+
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+        translateY(0);
 }
 
+/* =========================
+   TITLE
+========================= */
+
 .title {
+
     text-align: center;
+
     margin-bottom: 25px;
 }
 
 .title .small-heart {
+
     font-size: 30px;
 }
 
 .title h1 {
-    margin: 10px 0;
+
+    margin:
+        10px 0;
+
     font-size: 32px;
+
+    font-weight: 700;
+
     color: #ffd5e2;
-    text-shadow: 0 0 15px rgba(255,80,140,.8);
+
+    text-shadow:
+        0 0 15px
+        rgba(255,80,140,.8);
 }
 
 .title p {
+
     color: #ffb5cb;
+
     font-size: 14px;
 }
 
-/* Letter paper */
+/* =========================
+   LETTER PAPER
+========================= */
+
 .letter {
+
     background:
         linear-gradient(
-            rgba(255,255,255,.96),
-            rgba(255,242,247,.96)
+            rgba(255,255,255,.97),
+            rgba(255,242,247,.97)
         );
+
     color: #4a1828;
+
     border-radius: 25px;
-    padding: 30px 22px;
+
+    padding:
+        30px 22px;
+
     box-shadow:
-        0 20px 70px rgba(0,0,0,.45),
-        0 0 40px rgba(255,50,120,.18);
-    border: 1px solid rgba(255,255,255,.7);
+        0 20px 70px
+        rgba(0,0,0,.45),
+
+        0 0 40px
+        rgba(255,50,120,.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,.7);
 }
 
 .letter::before {
+
     content: "❤️";
+
     display: block;
+
     text-align: center;
+
     font-size: 28px;
+
     margin-bottom: 12px;
 }
 
 .letter p {
+
     font-size: 17px;
+
     line-height: 2;
-    margin: 0 0 20px;
+
+    margin:
+        0 0 20px;
 }
+
+/* =========================
+   STORY HEADLINES
+========================= */
+
+.story-heading {
+
+    text-align: center;
+
+    margin:
+        42px 0 25px;
+
+    padding:
+        12px 10px;
+
+    color: #c90046;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    line-height: 1.7;
+
+    border-top:
+        1px solid
+        rgba(201,0,70,.2);
+
+    border-bottom:
+        1px solid
+        rgba(201,0,70,.2);
+
+    text-shadow:
+        0 2px 8px
+        rgba(201,0,70,.15);
+}
+
+/* First heading */
+.story-heading:first-child {
+
+    margin-top: 0;
+}
+
+/* =========================
+   POETIC LINES
+========================= */
+
+.poem {
+
+    text-align: center;
+
+    font-size: 18px !important;
+
+    line-height: 2.1 !important;
+
+    color: #9f1745;
+
+    font-weight: 500;
+
+    margin:
+        25px 0 !important;
+}
+
+.poem strong {
+
+    font-weight: 700;
+
+    color: #c90046;
+}
+
+/* =========================
+   HIGHLIGHT
+========================= */
 
 .highlight {
+
     text-align: center;
-    font-size: 20px !important;
+
+    font-size:
+        20px !important;
+
+    line-height: 1.9 !important;
+
     font-weight: 700;
-    color: #d41452;
+
+    color:
+        #d41452;
 }
+
+/* =========================
+   DIVIDER
+========================= */
 
 .divider {
+
     text-align: center;
-    color: #e13c70;
-    font-size: 24px;
-    margin: 15px 0;
+
+    color:
+        #e13c70;
+
+    font-size:
+        24px;
+
+    margin:
+        25px 0;
 }
 
-.signature {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 18px;
-    color: #9c244b;
-}
+/* =========================
+   FINAL MESSAGE
+========================= */
 
 .final-line {
+
     text-align: center;
-    font-weight: bold;
-    font-size: 18px !important;
-    color: #c30d49;
-    margin-top: 30px !important;
+
+    font-weight: 700;
+
+    font-size:
+        19px !important;
+
+    line-height:
+        2.1 !important;
+
+    color:
+        #c30d49;
+
+    margin-top:
+        35px !important;
 }
 
-/* Birthday ending */
-.birthday {
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature {
+
     text-align: center;
-    margin-top: 35px;
-    padding: 25px 10px;
+
+    margin-top:
+        35px;
+
+    font-size:
+        18px;
+
+    color:
+        #9c244b;
+
+    font-weight:
+        600;
+}
+
+/* =========================
+   BIRTHDAY ENDING
+========================= */
+
+.birthday {
+
+    text-align: center;
+
+    margin-top:
+        35px;
+
+    padding:
+        25px 10px;
 }
 
 .cake {
-    font-size: 65px;
-    animation: heartbeat 1.5s infinite;
+
+    font-size:
+        65px;
+
+    animation:
+        heartbeat 1.5s infinite;
 }
 
 .birthday h2 {
-    color: #ffd5e2;
-    font-size: 27px;
-    text-shadow: 0 0 20px #ff3377;
+
+    color:
+        #ffd5e2;
+
+    font-size:
+        27px;
+
+    text-shadow:
+        0 0 20px
+        #ff3377;
 }
 
 .birthday p {
-    color: #ffc2d5;
+
+    color:
+        #ffc2d5;
+
+    line-height:
+        1.9;
 }
 
-/* Music button */
+/* =========================
+   MUSIC BUTTON
+========================= */
+
 .music-btn {
+
     position: fixed;
+
     right: 15px;
+
     bottom: 15px;
+
     z-index: 20;
+
     width: 48px;
+
     height: 48px;
+
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.4);
-    background: rgba(130,0,50,.7);
+
+    border:
+        1px solid
+        rgba(255,255,255,.4);
+
+    background:
+        rgba(130,0,50,.7);
+
     color: white;
+
     font-size: 20px;
+
     cursor: pointer;
-    backdrop-filter: blur(10px);
+
+    backdrop-filter:
+        blur(10px);
 }
 
-/* Desktop */
+/* =========================
+   DESKTOP
+========================= */
+
 @media (min-width: 700px) {
+
     .letter {
-        padding: 45px 50px;
+
+        padding:
+            45px 50px;
     }
 
     .letter p {
-        font-size: 18px;
+
+        font-size:
+            18px;
+    }
+
+    .story-heading {
+
+        font-size:
+            27px;
     }
 }
 </style>
 </head>
 
+
 <body>
 
-<!-- Floating hearts -->
-<div class="hearts" id="hearts"></div>
 
-<!-- Opening screen -->
+<!-- ==================================
+     FLOATING HEARTS
+================================== -->
+
+<div
+    class="hearts"
+    id="hearts">
+</div>
+
+
+<!-- ==================================
+     OPENING SCREEN
+================================== -->
+
 <section id="opening">
 
     <div class="open-card">
 
-        <div class="envelope">💌</div>
+        <div class="envelope">
+            💌
+        </div>
 
-        <h1>மஞ்சுஸ்ரீ… ❤️</h1>
+        <h1>
+            மஞ்சுஸ்ரீ… ❤️
+        </h1>
 
         <p>
             உனக்காக ஒரு சின்ன surprise...<br>
-            மனசுல இருந்து எழுதின ஒரு கடிதம்.
+            மனதில் இருந்து எழுதப்பட்ட<br>
+            ஒரு முடியாத கதை.
         </p>
 
-        <button class="open-btn" onclick="openLetter()">
+        <button
+            class="open-btn"
+            onclick="openLetter()">
+
             💖 Click to Open 💖
+
         </button>
 
     </div>
@@ -339,212 +705,1431 @@ body::before {
 </section>
 
 
-<!-- Main Letter -->
-<main class="main" id="main">
+<!-- ==================================
+     MAIN STORY
+================================== -->
+
+<main
+    class="main"
+    id="main">
+
+
+    <!-- MAIN TITLE -->
 
     <div class="title">
 
-        <div class="small-heart">❤️</div>
+        <div class="small-heart">
+            ❤️
+        </div>
 
-        <h1>Happy Birthday, Manjusree</h1>
+        <h1>
+            முதல் சந்திப்பு முதல்…<br>
+            ஒரு முடியாத கதை
+        </h1>
 
-        <p>ஒரு பழைய பயணத்தின் அழகான நினைவிலிருந்து…</p>
+        <p>
+            ஒரு train பயணத்தில் தொடங்கிய<br>
+            சில அழகான நினைவுகள்…
+        </p>
 
     </div>
 
 
+    <!-- ==================================
+         LETTER
+    ================================== -->
+
     <article class="letter">
 
-        <p>
-            மஞ்சுஸ்ரீ… ❤️
+
+        <!-- INTRO -->
+
+        <p class="poem">
+
+            சில கதைகள்<br>
+
+            <strong>
+                “ஒரு நாள்…”
+            </strong>
+
+            என்று தொடங்குவதில்லை.
+
+            <br><br>
+
+            சில கதைகள்<br>
+
+            ஒரு பயணத்தின் நடுவில்<br>
+
+            தெரியாமலேயே தொடங்கிவிடும்…
+
+            <br><br>
+
+            **அப்படித்தான் நம்ம கதை.** ❤️
+
         </p>
 
-        <p>
-            சில சந்திப்புகள் நம்ம வாழ்க்கையில்
-            சில மணி நேரங்கள் மட்டுமே இருக்கும்…
-            ஆனா, அந்த சில மணி நேரங்கள்
-            பல வருடங்கள் கடந்தாலும்
-            நம்ம மனசுல ஒரு அழகான நினைவாகவே தங்கிடும்.
-        </p>
+
+        <!-- ==================================
+             FIRST MEETING
+        ================================== -->
+
+        <div class="story-heading">
+
+            முதல் சந்திப்பு… 🚆❤️
+
+        </div>
+
 
         <p>
-            2022-ல அந்த train journey-ல
-            நம்ம சந்தித்ததும் அப்படித்தான்… 🚆❤️
+
+            அது ஒரு சாதாரண train journey.
+
+            <br><br>
+
+            Coimbatore-ல இருந்து Chennai…
+
+            <br><br>
+
+            நம்ம இருவருக்கும்
+            ஒருவரைப் பற்றி ஒருவருக்கு
+            எந்த அறிமுகமும் இல்லை.
+
         </p>
+
 
         <p>
-            Coimbatore-ல இருந்து Chennai வரைக்கும்
-            அந்தப் பயணம் முடிஞ்சிடுச்சு…
-            Train நின்னுடுச்சு,
-            அந்த நாளும் கடந்து போயிடுச்சு…
+
+            நீ எனக்கு ஒரு அந்நியமானவள்.
+
+            <br>
+
+            நான் உனக்கு ஒரு அந்நியன்.
+
         </p>
+
 
         <p>
-            ஆனா, அந்தப் பயணத்தில் அறிமுகமான
-            ஒரு மனிதர் மட்டும்
-            எப்படியோ இன்னும் என் நினைவுகளில்
-            அதே இடத்துல இருக்க.
+
+            ஆனால்…
+
+            <br><br>
+
+            எதற்காக என்று தெரியவில்லை…
+
+            உன்னிடம் பேச வேண்டும் என்று
+            என் மனம் மட்டும்
+            சொல்லிக்கொண்டே இருந்தது.
+
         </p>
 
-        <div class="divider">🌹 ❤️ 🌹</div>
 
-        <p>
-            அதுக்கப்புறம் number share பண்ணி,
-            கொஞ்சம் கொஞ்சமா பேச ஆரம்பிச்சோம்…
-            நாட்கள் போச்சு,
-            வருஷங்கள் போச்சு,
-            நம்ம வாழ்க்கையில நிறைய விஷயங்கள் மாறிடுச்சு…
-        </p>
+        <p class="poem">
 
-        <p>
-            ஆனா சில மனிதர்களைப் பற்றிய
-            ஒரு நல்ல எண்ணம் மட்டும்
-            எவ்வளவு காலம் ஆனாலும் மாறாது.
-        </p>
+            சில மனிதர்களை<br>
 
-        <p class="highlight">
+            முதன்முறையாக பார்க்கும்போதே,
+
+            <br><br>
+
+            <strong>
+                “இவரை ஏற்கனவே எங்கோ தெரியும்…”
+            </strong>
+
+            <br><br>
+
+            என்ற ஒரு விசித்திரமான உணர்வு வரும்.
+
+            <br><br>
+
             நீ அப்படித்தான். ❤️
+
         </p>
 
-        <p>
-            நேர்ல பார்த்து இப்போ கிட்டத்தட்ட 4 years ஆகிடுச்சு…
-            எப்போ மறுபடியும் சந்திப்போம்னு தெரியாது.
-        </p>
 
         <p>
-            ஆனா தூரத்துல இருந்தாலும்,
-            சில நேரம் உன்னை நினைச்சு
-            “அவ நல்லா இருக்கணும்…”
-            ன்னு மனசுக்குள்ள தோணுற அந்த feeling-க்கு
-            எந்த பெயரும் வைக்கத் தேவையில்லை.
+
+            பேச ஆரம்பித்தோம்…
+
+            <br><br>
+
+            பேச்சு சிரிப்பாக மாறியது.
+
+            <br>
+
+            சிரிப்பு நெருக்கமாக மாறியது.
+
+            <br>
+
+            நெருக்கம்…
+
+            <br><br>
+
+            எப்போது அன்பாக மாறியது என்று
+            நமக்கே தெரியவில்லை.
+
         </p>
 
-        <p>
-            அது friendship-ஆ இருக்கலாம்…
-            அதை விட கொஞ்சம் special-ஆவும் இருக்கலாம்…
-            என்னவா இருந்தாலும்,
+
+        <p class="poem">
+
+            <strong>
+                “அறிமுகமே இல்லாத இருவர்,<br>
+                சில மணி நேரத்தில்<br>
+                நினைவுகளாக மாறிய நாள் அது…” ❤️
+            </strong>
+
         </p>
+
+
+        <p>
+
+            Train Chennai-யை அடைந்தது.
+
+            <br><br>
+
+            பயணம் முடிந்தது.
+
+            <br>
+
+            நீ இறங்கிவிட்டாய்.
+
+            <br>
+
+            நானும் இறங்கிவிட்டேன்.
+
+        </p>
+
 
         <p class="highlight">
-            அது உண்மையானது. ❤️
+
+            ஆனால்…
+
         </p>
 
-        <div class="divider">✨ 💕 ✨</div>
+
+        <p class="poem">
+
+            Train மட்டும் தான் நின்றது…
+
+            <br><br>
+
+            <strong>
+                நம் நினைவுகள் மட்டும்<br>
+                அன்றிலிருந்து ஓடிக்கொண்டே இருந்தன. ❤️
+            </strong>
+
+        </p>
+
+
+        <div class="divider">
+            🌹 ❤️ 🌹
+        </div>
+
+
+        <!-- ==================================
+             SEVEN DAYS
+        ================================== -->
+
+        <div class="story-heading">
+
+            அந்த ஏழு நாட்கள்… 🌙
+
+        </div>
+
 
         <p>
-            இன்று உன் birthday… 🎂✨
+
+            Chennai வந்த பிறகு
+            நம்முடைய உரையாடல்கள்
+            தொடர்ந்துகொண்டே இருந்தன.
+
         </p>
 
-        <p>
-            உன் வாழ்க்கையில் நீ எதிர்பார்க்கிற
-            எல்லாமே உனக்கு கிடைக்கணும்.
-        </p>
 
         <p>
-            நீ சிரிக்கிற காரணங்கள் அதிகமாகணும்…
-            கவலைப்படுற காரணங்கள் குறையணும்…
-            உன் மனசுக்கு பிடிச்ச வாழ்க்கையை
-            நீ அழகா வாழணும்.
+
+            அது பெரிய விஷயங்கள் பற்றிய பேச்சல்ல…
+
+            <br><br>
+
+            சின்னச் சின்ன விஷயங்கள்.
+
+            <br><br>
+
+            “சாப்பிட்டாயா?”
+
+            <br>
+
+            “என்ன பண்ற?”
+
+            <br>
+
+            “எப்படி இருக்க?”
+
         </p>
 
+
         <p>
-            எங்க இருந்தாலும்,
-            யாரோட இருந்தாலும்,
+
+            நீ உடம்பு சரியில்லை என்று சொன்னால்,
+
+            என்னவோ…
+
+            என் மனம் மட்டும்
+            உன்னை விட அதிகமாக
+            கவலைப்பட்டது.
+
         </p>
+
+
+        <p>
+
+            நீ சிரித்தால்,
+
+            என்ன காரணம் என்று
+            தெரியாமலேயே,
+
+            என் முகத்திலும்
+            ஒரு புன்னகை பிறந்தது.
+
+        </p>
+
+
+        <p class="poem">
+
+            அப்போது தான்
+            எனக்குள் ஒரு கேள்வி பிறந்தது…
+
+            <br><br>
+
+            <strong>
+                “இவள் யார்?”
+            </strong>
+
+            <br><br>
+
+            அதற்கு என் மனம் சொன்ன பதில்…
+
+            <br><br>
+
+            <strong>
+                “தெரியவில்லை…<br>
+                ஆனால் பிடித்திருக்கிறது.” ❤️
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            அந்த ஏழு நாட்கள்…
+
+            <br><br>
+
+            வாழ்க்கையின் கணக்கில்
+            வெறும் ஏழு நாட்கள்.
+
+            <br><br>
+
+            ஆனால் நினைவுகளின் கணக்கில்…
+
+        </p>
+
+
+        <p class="poem">
+
+            <strong>
+                அது ஒரு சிறிய உலகம்.
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            பிறகு…
+
+            <br><br>
+
+            ஒரு நாள் நீ சொன்னாய்,
+
+        </p>
+
 
         <p class="highlight">
-            நீ சந்தோஷமா இருக்கணும். ❤️
+
+            “என்னிடம் பேசாதே…<br>
+            எனக்கு ஒரு காதல் இருக்கிறது.”
+
         </p>
 
-        <div class="divider">🌹</div>
-
-        <p>
-            இது ஒரு birthday wish மட்டும் இல்ல…
-        </p>
 
         <p>
-            சில வருடங்களுக்கு முன்னாடி
-            ஒரு train-ல சந்தித்த அந்தப் பொண்ணுக்கு,
-            இன்னும் நல்லதையே நினைக்கிற
-            ஒருத்தனோட மனசார்ந்த wish இது.
+
+            அந்த ஒரு வார்த்தை
+            என் மனதை காயப்படுத்தியது.
+
+            <br><br>
+
+            ஆனால் உன் மீது
+            எனக்கு கோபம் வரவில்லை.
+
+            <br><br>
+
+            மாறாக…
+
+            <br><br>
+
+            உன் மீது இருந்த
+            மரியாதை இன்னும் அதிகமானது.
+
         </p>
+
+
+        <p>
+
+            ஏனென்றால்,
+
+            உன் வாழ்க்கையில் ஏற்கனவே ஒருவர்
+            இருக்கும்போது,
+
+            என்னுடைய உணர்வுகளுக்காக
+            அந்த உறவை நீ ஏமாற்றவில்லை.
+
+        </p>
+
+
+        <p class="poem">
+
+            அந்த நொடியில்
+            நான் ஒரு விஷயத்தை புரிந்துகொண்டேன்…
+
+            <br><br>
+
+            <strong>
+                காதல் என்பது<br>
+                ஒருவரை அடைவது மட்டும் இல்லை…
+            </strong>
+
+            <br><br>
+
+            சில நேரங்களில்,
+
+            <br>
+
+            அவர்களுடைய முடிவை<br>
+            மரியாதையுடன் ஏற்றுக்கொள்வதும்
+
+            <br><br>
+
+            <strong>
+                காதல்தான். ❤️
+            </strong>
+
+        </p>
+
+
+        <!-- ==================================
+             DISTANCE
+        ================================== -->
+
+        <div class="story-heading">
+
+            இடைவெளி… 🍂
+
+        </div>
+
+
+        <p>
+
+            அதன்பிறகு நீ விலகினாய்.
+
+            <br><br>
+
+            முழுமையாக.
+
+            <br><br>
+
+            பேசவில்லை.
+
+            <br>
+
+            தேடவில்லை.
+
+            <br>
+
+            திரும்பிப் பார்க்கவில்லை.
+
+        </p>
+
+
+        <p>
+
+            நான்?
+
+            <br><br>
+
+            வெளியில் வழக்கம்போல வாழ்ந்தேன்.
+
+            <br><br>
+
+            ஆனால் உள்ளுக்குள்…
+
+        </p>
+
+
+        <p class="poem">
+
+            சில நாட்கள்
+            நகரவே இல்லை.
+
+            <br><br>
+
+            சில இரவுகள்
+            தூங்கவே இல்லை.
+
+            <br><br>
+
+            சில நினைவுகள் மட்டும்
+            என்னை தூங்க விடாமல்
+            உன்னிடம் அழைத்துச் சென்றன.
+
+        </p>
+
+
+        <p>
+
+            ஒரு train…
+
+            <br>
+
+            ஒரு புன்னகை…
+
+            <br>
+
+            சில உரையாடல்கள்…
+
+            <br>
+
+            ஏழு நாட்கள்…
+
+            <br><br>
+
+            அவ்வளவுதான்.
+
+        </p>
+
+
+        <p class="poem">
+
+            ஆனால்…
+
+            <br><br>
+
+            <strong>
+                அந்த “அவ்வளவு”<br>
+                எனக்கு அவ்வளவு சிறியதாக இல்லை.
+            </strong>
+
+        </p>
+
+
+        <p class="poem">
+
+            நாட்கள் நகர்ந்தன…
+
+            <br>
+
+            ஆண்டுகள் கடந்தன…
+
+            <br><br>
+
+            ஆனால் சில நினைவுகள் மட்டும்
+
+            <br>
+
+            காலத்தின் கையில்
+            வயதாக மறுத்துவிடும். ❤️
+
+        </p>
+
+
+        <!-- ==================================
+             FOUR YEARS
+        ================================== -->
+
+        <div class="story-heading">
+
+            நான்கு வருடங்கள்… ⏳
+
+        </div>
+
+
+        <p>
+
+            நான்கு வருடங்கள்.
+
+            <br><br>
+
+            ஆம்…
+
+            <br><br>
+
+            நம்முடைய கடைசி சந்திப்புக்கும்
+            மீண்டும் பேசும் நாளுக்கும் இடையில்
+            நான்கு வருடங்கள் இருந்தன.
+
+        </p>
+
+
+        <p>
+
+            இந்த நான்கு வருடங்களில்
+            நிறைய விஷயங்கள் மாறின.
+
+            <br><br>
+
+            நானும் மாறினேன்.
+
+            <br>
+
+            என் எண்ணங்களும் மாறின.
+
+            <br>
+
+            என் வாழ்க்கையும் மாறியது.
+
+        </p>
+
+
+        <p>
+
+            ஆனால் ஒரு கேள்வி மட்டும்
+            எங்கோ மனதின் மூலையில்
+            மாறாமல் இருந்தது…
+
+        </p>
+
 
         <p class="highlight">
-            Happy Birthday, Manjusree… 🎂❤️
+
+            “அவளுக்கு என்னுடைய நினைவு<br>
+            இன்னும் இருக்கிறதா?”
+
         </p>
+
+
+        <p>
+
+            சில நேரங்களில்,
+            நம்மை விட்டு விலகியவர்கள்
+            நம்மை மறந்துவிட்டார்களா
+            என்று தெரியாமல் இருப்பதே
+            மிகப்பெரிய தண்டனை.
+
+            <br><br>
+
+            அப்படித்தான் இருந்தது.
+
+        </p>
+
+
+        <!-- ==================================
+             AGAIN
+        ================================== -->
+
+        <div class="story-heading">
+
+            மீண்டும்… ❤️
+
+        </div>
+
+
+        <p>
+
+            ஒரு நாள்…
+
+            <br><br>
+
+            நான் மீண்டும் உன்னை அணுகினேன்.
+
+        </p>
+
+
+        <p>
+
+            என்ன நடக்கும் என்று தெரியவில்லை.
+
+            <br><br>
+
+            நீ பேசுவாயா?
+
+            <br>
+
+            மறந்துவிட்டாயா?
+
+            <br>
+
+            மீண்டும் விலகுவாயா?
+
+        </p>
+
+
+        <p>
+
+            என்றெல்லாம் தெரியவில்லை.
+
+            <br><br>
+
+            ஆனால்…
+
+        </p>
+
+
+        <p class="poem">
+
+            நீ என்னை
+
+            <br>
+
+            உன் பழைய புன்னகையுடன்
+            வரவேற்றாய்.
+
+            <br><br>
+
+            <strong>
+                அந்த ஒரு புன்னகை…
+
+                <br><br>
+
+                நான்கு வருடங்களை
+                ஒரே நொடியில் அழித்தது. ❤️
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            மீண்டும் பேச்சு.
+
+            <br>
+
+            மீண்டும் சிரிப்பு.
+
+            <br>
+
+            மீண்டும் அந்த பழைய நெருக்கம்.
+
+            <br><br>
+
+            சில நாட்கள்…
+
+            <br><br>
+
+            மீண்டும் அழகாக இருந்தன.
+
+        </p>
+
+
+        <p>
+
+            அப்போது என் மனதில் இருந்ததை
+            மறைக்க முடியவில்லை.
+
+            <br><br>
+
+            உன்னை காதலிப்பதாக சொன்னேன்.
+
+        </p>
+
+
+        <p>
+
+            அது ஒரு ஆசையால் மட்டும் இல்லை.
+
+            <br><br>
+
+            ஒரு காலத்தில்,
+            என் கையில் இருந்த
+            தங்கத்தின் மதிப்பை அறியாமல்
+            அதை இழந்தவன் நான்.
+
+        </p>
+
+
+        <p>
+
+            அந்த இழப்பு
+            எனக்கு ஒரு பாடம் கற்றுக்கொடுத்திருந்தது.
+
+        </p>
+
+
+        <p class="poem">
+
+            <strong>
+                மதிப்புள்ள மனிதர்கள்<br>
+                நம்முடன் இருக்கும்போது<br>
+                அவர்களின் மதிப்பை உணர வேண்டும்.
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            அதனால் தான்,
+            இந்த முறை
+            என் உணர்வுகளை
+            மறைக்க விரும்பவில்லை.
+
+        </p>
+
+
+        <!-- ==================================
+             LESSON
+        ================================== -->
+
+        <div class="story-heading">
+
+            மீண்டும் ஒரு பாடம்… 🍁
+
+        </div>
+
+
+        <p>
+
+            ஆனால்…
+
+            <br><br>
+
+            கதை மீண்டும்
+            அதே இடத்துக்குத்தான் வந்தது.
+
+            <br><br>
+
+            நீ மீண்டும் விலகினாய்.
+
+        </p>
+
+
+        <p>
+
+            அந்த நேரத்தில்
+            உன்னை குறை சொல்லவில்லை.
+
+            <br><br>
+
+            இந்த முறை
+            என்னையே கேள்வி கேட்டேன்.
+
+        </p>
+
+
+        <p class="poem">
+
+            “நான் உண்மையில் காதலிக்கிறேனா?”
+
+            <br><br>
+
+            “அல்லது அவள் கொடுத்த அன்பையும்,
+            அக்கறையையும்,
+            காதல் என்று தவறாக புரிந்துகொண்டேனா?”
+
+        </p>
+
+
+        <p>
+
+            சில நாட்கள்
+            என்னுடன் நானே பேசிக்கொண்டேன்.
+
+            <br><br>
+
+            அப்போது தான்
+            ஒரு உண்மை புரிந்தது.
+
+        </p>
+
+
+        <p>
+
+            நீ எனக்குக் கொடுத்த
+            அந்த அழகான நட்பை,
+
+            <br><br>
+
+            அந்த அக்கறையை,
+
+            <br><br>
+
+            அந்த பாசத்தை,
+
+            <br><br>
+
+            என் மனதில் இருந்த உணர்வுகளால்
+            “காதல்” என்று
+            அழைத்துவிட்டேன்.
+
+        </p>
+
+
+        <p class="highlight">
+
+            அது உன் தவறு இல்லை.
+
+            <br>
+
+            என் மனதின் குழப்பம்.
+
+        </p>
+
+
+        <p>
+
+            அந்த உண்மை புரிந்தவுடன்
+            மீண்டும் உன்னைத் தொடர்புகொண்டேன்.
+
+        </p>
+
+
+        <p class="poem">
+
+            இந்த முறை…
+
+            <br><br>
+
+            எந்த எதிர்பார்ப்புமின்றி.
+
+            <br>
+
+            எந்த உரிமையுமின்றி.
+
+            <br>
+
+            எந்த கேள்வியுமின்றி.
+
+            <br><br>
+
+            <strong>
+                ஒரு நல்லநலம் விரும்பியாக மட்டும்.
+            </strong>
+
+        </p>
+
+
+        <!-- ==================================
+             HER SMILE
+        ================================== -->
+
+        <div class="story-heading">
+
+            அவளுடைய புன்னகை… 🌹
+
+        </div>
+
+
+        <p>
+
+            அதுதான் ஆச்சரியம்.
+
+            <br><br>
+
+            நான் எதிர்பார்த்தது
+            ஒரு தூரம்.
+
+            <br><br>
+
+            ஆனால் நீ கொடுத்தது…
+
+        </p>
+
+
+        <p class="poem">
+
+            அதே புன்னகை.
+
+            <br>
+
+            அதே அன்பு.
+
+            <br>
+
+            அதே அரவணைப்பு.
+
+        </p>
+
+
+        <p>
+
+            என்னை ஒரு காதலனாக அல்ல…
+
+            <br><br>
+
+            ஒரு நல்லநலம் விரும்பியாக
+            ஏற்றுக்கொண்டாய்.
+
+        </p>
+
+
+        <p>
+
+            அந்த நொடியில்
+            எனக்கு ஒரு பெரிய உண்மை புரிந்தது.
+
+        </p>
+
+
+        <p class="poem">
+
+            <strong>
+                சில மனிதர்கள்<br>
+                நம் வாழ்க்கையில்<br>
+                நமக்காக வருவதில்லை…
+
+                <br><br>
+
+                நம்மை மாற்றுவதற்காக வருகிறார்கள்.
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            நீ என்னை மாற்றினாய்.
+
+            <br><br>
+
+            காதலைப் பற்றிய
+            என் புரிதலை மாற்றினாய்.
+
+            <br><br>
+
+            இழப்பைப் பற்றிய
+            என் புரிதலை மாற்றினாய்.
+
+        </p>
+
+
+        <p>
+
+            முக்கியமாக…
+
+        </p>
+
+
+        <p class="poem">
+
+            <strong>
+                ஒருவரை நேசிப்பது என்றால்<br>
+
+                அவரை நமக்கானவராக மாற்றுவது அல்ல…
+
+                <br><br>
+
+                அவர் சந்தோஷமாக இருக்க வேண்டும்
+                என்று மனதார விரும்புவதுதான்
+
+                <br><br>
+
+                உண்மையான அன்பு.
+            </strong>
+
+            ❤️
+
+        </p>
+
+
+        <div class="divider">
+            ✨ ❤️ ✨
+        </div>
+
+
+        <!-- ==================================
+             TODAY
+        ================================== -->
+
+        <div class="story-heading">
+
+            இன்று… 🎂❤️
+
+        </div>
+
+
+        <p>
+
+            இன்று உன் பிறந்தநாள்.
+
+        </p>
+
+
+        <p>
+
+            நம்ம கதைக்கு
+            Happy Ending இருக்கிறதா
+            என்று எனக்குத் தெரியாது.
+
+            <br><br>
+
+            நம்ம கதை
+            எங்கே போய் முடியும் என்றும்
+            தெரியாது.
+
+        </p>
+
+
+        <p>
+
+            ஒருவேளை…
+
+            <br><br>
+
+            இது ஒரு காதல் கதையாக
+            முடியாமல் போகலாம்.
+
+        </p>
+
+
+        <p>
+
+            ஆனால் ஒரு விஷயம் மட்டும் உறுதி.
+
+        </p>
+
+
+        <p class="poem">
+
+            ஒரு நாள்…
+
+            <br><br>
+
+            ஒரு train-ல்…
+
+            <br><br>
+
+            ஒரு அந்நியமான பெண்ணை சந்தித்தேன்.
+
+            <br><br>
+
+            அவளுடன் சில மணி நேரம் பேசினேன்.
+
+            <br><br>
+
+            பிறகு ஏழு நாட்கள்
+            அவளுடன் வாழ்ந்தது போல
+            பேசினேன்.
+
+            <br><br>
+
+            அவளை இழந்தேன்.
+
+            <br><br>
+
+            நான்கு வருடங்கள் கழித்து
+            மீண்டும் சந்தித்தேன்.
+
+            <br><br>
+
+            மீண்டும் சில நினைவுகளைப் பெற்றேன்.
+
+            <br><br>
+
+            மீண்டும் என்னையே புரிந்துகொண்டேன்.
+
+        </p>
+
+
+        <p>
+
+            இன்று…
+
+            <br><br>
+
+            அவள் என் வாழ்க்கையில்
+            எந்த பெயரில் இருந்தாலும்
+            பரவாயில்லை.
+
+        </p>
+
+
+        <p class="poem">
+
+            <strong>
+                என் நினைவுகளில் மட்டும்<br>
+
+                அவளுக்கு ஒரு அழகான இடம்
+
+                <br>
+
+                எப்போதும் இருக்கும். ❤️
+            </strong>
+
+        </p>
+
+
+        <div class="divider">
+            🌹 ❤️ 🌹
+        </div>
+
+
+        <!-- ==================================
+             BIRTHDAY WISH
+        ================================== -->
+
+        <div class="story-heading">
+
+            என் நினைவுகளில் வாழும்<br>
+            LADDUU-க்கு… 🌹
+
+        </div>
+
+
+        <p>
+
+            உன் வாழ்க்கையில்
+            நீ எதிர்பார்க்கும் எல்லாமே
+            கிடைக்கட்டும்.
+
+        </p>
+
+
+        <p>
+
+            உன் சிரிப்புக்கு
+            ஆயிரம் காரணங்கள் கிடைக்கட்டும்.
+
+        </p>
+
+
+        <p>
+
+            உன் கண்களில்
+            கண்ணீரைவிட
+            சந்தோஷமே அதிகமாகட்டும்.
+
+        </p>
+
+
+        <p>
+
+            நீ எங்கே இருந்தாலும்…
+
+            <br><br>
+
+            யாருடன் இருந்தாலும்…
+
+            <br><br>
+
+            எப்படி வாழ்ந்தாலும்…
+
+        </p>
+
+
+        <p class="highlight">
+
+            நீ மனசார சந்தோஷமாக இருக்க வேண்டும். ❤️
+
+        </p>
+
+
+        <p>
+
+            அது மட்டும் தான்
+            இன்றும் உனக்காக
+            நான் கேட்கும் ஒரு ஆசை.
+
+        </p>
+
+
+        <div class="divider">
+            ✨ 🌹 ✨
+        </div>
+
+
+        <!-- ==================================
+             FINAL POEM
+        ================================== -->
 
         <p class="final-line">
-            சில பயணங்கள் முடிஞ்சிடும்…<br>
-            சில சந்திப்புகள் மறந்துடும்…<br><br>
 
-            ஆனா சில மனிதர்கள் மட்டும்<br>
-            நம்ம வாழ்க்கையிலிருந்து தூரமா போனாலும்,<br>
-            நம்ம நினைவுகளிலிருந்து<br>
-            எங்கும் போக மாட்டாங்க. ❤️
+            சில பயணங்கள் முடிந்துவிடும்…
+
+            <br>
+
+            சில சந்திப்புகள் மறந்துவிடும்…
+
+            <br><br>
+
+            ஆனால்…
+
+            <br><br>
+
+            ஒரு முறை மனதில் பதிந்த
+            சில மனிதர்கள் மட்டும்,
+
+            <br><br>
+
+            எத்தனை வருடங்கள் கடந்தாலும்
+
+            <br>
+
+            நம்மை விட்டு போகவே மாட்டார்கள். ❤️
+
         </p>
+
+
+        <p class="poem">
+
+            அந்த முதல் train பயணத்தில்
+
+            <br>
+
+            என் வாழ்க்கைக்குள் வந்தவளுக்கு…
+
+            <br><br>
+
+            என் ஆசை முத்தங்களுடன்…
+
+            <br>
+
+            என் மனமார்ந்த பிறந்தநாள் வாழ்த்துக்கள். 🌹❤️
+
+        </p>
+
 
         <p class="highlight">
-            நீ அப்படிப்பட்ட ஒரு நினைவு. 🌹
+
+            Happy Birthday, LADDUU… 🎂❤️
+
         </p>
 
+
+        <p class="final-line">
+
+            நீ என் கதையின் முடிவாக
+            இல்லாமல் இருக்கலாம்…
+
+            <br><br>
+
+            ஆனால்…
+
+            <br><br>
+
+            என் நினைவுகளின்
+            மிக அழகான அத்தியாயம்
+
+            <br><br>
+
+            <strong>
+                நீதான். ❤️
+            </strong>
+
+        </p>
+
+
         <div class="signature">
-            With a heart full of good wishes… ❤️
+
+            என் மனதின் ஓரத்தில்<br>
+            என்றும் அழியாத ஒரு நினைவாக… ❤️
+
         </div>
+
 
     </article>
 
 
+    <!-- ==================================
+         BIRTHDAY FOOTER
+    ================================== -->
+
     <div class="birthday">
 
-        <div class="cake">🎂</div>
+        <div class="cake">
+            🎂
+        </div>
 
-        <h2>Happy Birthday ❤️</h2>
+        <h2>
+            Happy Birthday, LADDUU ❤️
+        </h2>
 
         <p>
+
             May your life always be filled with<br>
+
             love, happiness & beautiful memories ✨
+
         </p>
 
     </div>
 
+
 </main>
 
 
-<!-- Optional music button -->
-<button class="music-btn" onclick="toggleMusic()" id="musicButton">
+<!-- ==================================
+     MUSIC BUTTON
+================================== -->
+
+<button
+    class="music-btn"
+    onclick="toggleMusic()"
+    id="musicButton">
+
     🎵
+
 </button>
 
-<!--
-IMPORTANT:
-For music, upload an MP3 named "music.mp3"
-to the SAME GitHub repository.
 
-Then it will play when the visitor taps the music button.
--->
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
+<audio
+    id="music"
+    loop>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
 </audio>
 
 
 <script>
 
-/* Create floating hearts */
+/* ==================================
+   CREATE FLOATING HEARTS
+================================== */
 
-const heartsContainer = document.getElementById("hearts");
+const heartsContainer =
+    document.getElementById("hearts");
 
-const heartSymbols = ["❤️","💕","💗","💖","💘","💝","🌹"];
+const heartSymbols = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "💘",
+    "💝",
+    "🌹"
+];
+
 
 for (let i = 0; i < 35; i++) {
 
-    const heart = document.createElement("div");
+    const heart =
+        document.createElement("div");
 
     heart.className = "heart";
 
     heart.innerHTML =
-        heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heartSymbols[
+            Math.floor(
+                Math.random() *
+                heartSymbols.length
+            )
+        ];
 
-    heart.style.left = Math.random() * 100 + "%";
+    heart.style.left =
+        Math.random() * 100 + "%";
 
     heart.style.fontSize =
         (15 + Math.random() * 25) + "px";
@@ -555,20 +2140,32 @@ for (let i = 0; i < 35; i++) {
     heart.style.animationDelay =
         (Math.random() * 10) + "s";
 
-    heartsContainer.appendChild(heart);
+    heartsContainer.appendChild(
+        heart
+    );
 }
 
 
-/* Open letter */
+/* ==================================
+   OPEN LETTER
+================================== */
 
 function openLetter() {
 
-    const opening = document.getElementById("opening");
-    const main = document.getElementById("main");
+    const opening =
+        document.getElementById(
+            "opening"
+        );
+
+    const main =
+        document.getElementById(
+            "main"
+        );
 
     opening.classList.add("hide");
 
     setTimeout(() => {
+
         main.classList.add("show");
 
         window.scrollTo({
@@ -577,31 +2174,52 @@ function openLetter() {
         });
 
     }, 500);
-
 }
 
 
-/* Music */
+/* ==================================
+   MUSIC
+================================== */
 
 let playing = false;
 
+
 function toggleMusic() {
 
-    const music = document.getElementById("music");
-    const button = document.getElementById("musicButton");
+    const music =
+        document.getElementById(
+            "music"
+        );
+
+    const button =
+        document.getElementById(
+            "musicButton"
+        );
+
 
     if (!playing) {
 
         music.play()
+
         .then(() => {
+
             playing = true;
+
             button.innerHTML = "🔊";
+
         })
+
         .catch(() => {
-            alert("Please upload music.mp3 to the same GitHub folder.");
+
+            alert(
+                "Please upload music.mp3 to the same GitHub folder."
+            );
+
         });
 
-    } else {
+    }
+
+    else {
 
         music.pause();
 
