@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Manjusree ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Noto Serif Tamil', serif;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,120,160,.35), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(255,30,100,.25), transparent 35%),
+        linear-gradient(135deg, #18000c, #4b001d, #160008);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Animated background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle, rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size: 35px 35px;
+    animation: stars 12s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes stars {
+    from { transform: translateY(0); }
+    to { transform: translateY(35px); }
+}
+
+/* Floating hearts */
+.hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    color: #ff5c93;
+    font-size: 22px;
+    animation: floatUp linear infinite;
+    opacity: .75;
+    filter: drop-shadow(0 0 8px #ff3377);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    85% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Opening screen */
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at center, #70002d, #21000f 65%, #090006);
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.open-card {
+    text-align: center;
+    max-width: 380px;
+    width: 100%;
+    padding: 35px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow:
+        0 0 50px rgba(255,0,100,.3),
+        inset 0 0 30px rgba(255,255,255,.04);
+    backdrop-filter: blur(12px);
+}
+
+.envelope {
+    font-size: 75px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    15% { transform: scale(1.12); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.08); }
+}
+
+.open-card h1 {
+    font-size: 28px;
+    margin: 15px 0 8px;
+    color: #ffd1df;
+}
+
+.open-card p {
+    font-size: 15px;
+    color: #ffc1d4;
+    line-height: 1.8;
+}
+
+.open-btn {
+    margin-top: 20px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff1764, #c90046);
+    box-shadow: 0 0 25px rgba(255,0,90,.6);
+    animation: buttonGlow 2s infinite;
+}
+
+@keyframes buttonGlow {
+    50% {
+        box-shadow: 0 0 40px rgba(255,0,90,.9);
+    }
+}
+
+#opening.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Main letter */
+.main {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: auto;
+    padding: 35px 18px 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.5s ease;
+}
+
+.main.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.title .small-heart {
+    font-size: 30px;
+}
+
+.title h1 {
+    margin: 10px 0;
+    font-size: 32px;
+    color: #ffd5e2;
+    text-shadow: 0 0 15px rgba(255,80,140,.8);
+}
+
+.title p {
+    color: #ffb5cb;
+    font-size: 14px;
+}
+
+/* Letter paper */
+.letter {
+    background:
+        linear-gradient(
+            rgba(255,255,255,.96),
+            rgba(255,242,247,.96)
+        );
+    color: #4a1828;
+    border-radius: 25px;
+    padding: 30px 22px;
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.45),
+        0 0 40px rgba(255,50,120,.18);
+    border: 1px solid rgba(255,255,255,.7);
+}
+
+.letter::before {
+    content: "❤️";
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.letter p {
+    font-size: 17px;
+    line-height: 2;
+    margin: 0 0 20px;
+}
+
+.highlight {
+    text-align: center;
+    font-size: 20px !important;
+    font-weight: 700;
+    color: #d41452;
+}
+
+.divider {
+    text-align: center;
+    color: #e13c70;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.signature {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #9c244b;
+}
+
+.final-line {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px !important;
+    color: #c30d49;
+    margin-top: 30px !important;
+}
+
+/* Birthday ending */
+.birthday {
+    text-align: center;
+    margin-top: 35px;
+    padding: 25px 10px;
+}
+
+.cake {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.birthday h2 {
+    color: #ffd5e2;
+    font-size: 27px;
+    text-shadow: 0 0 20px #ff3377;
+}
+
+.birthday p {
+    color: #ffc2d5;
+}
+
+/* Music button */
+.music-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 20;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.4);
+    background: rgba(130,0,50,.7);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+/* Desktop */
+@media (min-width: 700px) {
+    .letter {
+        padding: 45px 50px;
+    }
+
+    .letter p {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="hearts" id="hearts"></div>
+
+<!-- Opening screen -->
+<section id="opening">
+
+    <div class="open-card">
+
+        <div class="envelope">💌</div>
+
+        <h1>மஞ்சுஸ்ரீ… ❤️</h1>
+
+        <p>
+            உனக்காக ஒரு சின்ன surprise...<br>
+            மனசுல இருந்து எழுதின ஒரு கடிதம்.
+        </p>
+
+        <button class="open-btn" onclick="openLetter()">
+            💖 Click to Open 💖
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Main Letter -->
+<main class="main" id="main">
+
+    <div class="title">
+
+        <div class="small-heart">❤️</div>
+
+        <h1>Happy Birthday, Manjusree</h1>
+
+        <p>ஒரு பழைய பயணத்தின் அழகான நினைவிலிருந்து…</p>
+
+    </div>
+
+
+    <article class="letter">
+
+        <p>
+            மஞ்சுஸ்ரீ… ❤️
+        </p>
+
+        <p>
+            சில சந்திப்புகள் நம்ம வாழ்க்கையில்
+            சில மணி நேரங்கள் மட்டுமே இருக்கும்…
+            ஆனா, அந்த சில மணி நேரங்கள்
+            பல வருடங்கள் கடந்தாலும்
+            நம்ம மனசுல ஒரு அழகான நினைவாகவே தங்கிடும்.
+        </p>
+
+        <p>
+            2022-ல அந்த train journey-ல
+            நம்ம சந்தித்ததும் அப்படித்தான்… 🚆❤️
+        </p>
+
+        <p>
+            Coimbatore-ல இருந்து Chennai வரைக்கும்
+            அந்தப் பயணம் முடிஞ்சிடுச்சு…
+            Train நின்னுடுச்சு,
+            அந்த நாளும் கடந்து போயிடுச்சு…
+        </p>
+
+        <p>
+            ஆனா, அந்தப் பயணத்தில் அறிமுகமான
+            ஒரு மனிதர் மட்டும்
+            எப்படியோ இன்னும் என் நினைவுகளில்
+            அதே இடத்துல இருக்க.
+        </p>
+
+        <div class="divider">🌹 ❤️ 🌹</div>
+
+        <p>
+            அதுக்கப்புறம் number share பண்ணி,
+            கொஞ்சம் கொஞ்சமா பேச ஆரம்பிச்சோம்…
+            நாட்கள் போச்சு,
+            வருஷங்கள் போச்சு,
+            நம்ம வாழ்க்கையில நிறைய விஷயங்கள் மாறிடுச்சு…
+        </p>
+
+        <p>
+            ஆனா சில மனிதர்களைப் பற்றிய
+            ஒரு நல்ல எண்ணம் மட்டும்
+            எவ்வளவு காலம் ஆனாலும் மாறாது.
+        </p>
+
+        <p class="highlight">
+            நீ அப்படித்தான். ❤️
+        </p>
+
+        <p>
+            நேர்ல பார்த்து இப்போ கிட்டத்தட்ட 4 years ஆகிடுச்சு…
+            எப்போ மறுபடியும் சந்திப்போம்னு தெரியாது.
+        </p>
+
+        <p>
+            ஆனா தூரத்துல இருந்தாலும்,
+            சில நேரம் உன்னை நினைச்சு
+            “அவ நல்லா இருக்கணும்…”
+            ன்னு மனசுக்குள்ள தோணுற அந்த feeling-க்கு
+            எந்த பெயரும் வைக்கத் தேவையில்லை.
+        </p>
+
+        <p>
+            அது friendship-ஆ இருக்கலாம்…
+            அதை விட கொஞ்சம் special-ஆவும் இருக்கலாம்…
+            என்னவா இருந்தாலும்,
+        </p>
+
+        <p class="highlight">
+            அது உண்மையானது. ❤️
+        </p>
+
+        <div class="divider">✨ 💕 ✨</div>
+
+        <p>
+            இன்று உன் birthday… 🎂✨
+        </p>
+
+        <p>
+            உன் வாழ்க்கையில் நீ எதிர்பார்க்கிற
+            எல்லாமே உனக்கு கிடைக்கணும்.
+        </p>
+
+        <p>
+            நீ சிரிக்கிற காரணங்கள் அதிகமாகணும்…
+            கவலைப்படுற காரணங்கள் குறையணும்…
+            உன் மனசுக்கு பிடிச்ச வாழ்க்கையை
+            நீ அழகா வாழணும்.
+        </p>
+
+        <p>
+            எங்க இருந்தாலும்,
+            யாரோட இருந்தாலும்,
+        </p>
+
+        <p class="highlight">
+            நீ சந்தோஷமா இருக்கணும். ❤️
+        </p>
+
+        <div class="divider">🌹</div>
+
+        <p>
+            இது ஒரு birthday wish மட்டும் இல்ல…
+        </p>
+
+        <p>
+            சில வருடங்களுக்கு முன்னாடி
+            ஒரு train-ல சந்தித்த அந்தப் பொண்ணுக்கு,
+            இன்னும் நல்லதையே நினைக்கிற
+            ஒருத்தனோட மனசார்ந்த wish இது.
+        </p>
+
+        <p class="highlight">
+            Happy Birthday, Manjusree… 🎂❤️
+        </p>
+
+        <p class="final-line">
+            சில பயணங்கள் முடிஞ்சிடும்…<br>
+            சில சந்திப்புகள் மறந்துடும்…<br><br>
+
+            ஆனா சில மனிதர்கள் மட்டும்<br>
+            நம்ம வாழ்க்கையிலிருந்து தூரமா போனாலும்,<br>
+            நம்ம நினைவுகளிலிருந்து<br>
+            எங்கும் போக மாட்டாங்க. ❤️
+        </p>
+
+        <p class="highlight">
+            நீ அப்படிப்பட்ட ஒரு நினைவு. 🌹
+        </p>
+
+        <div class="signature">
+            With a heart full of good wishes… ❤️
+        </div>
+
+    </article>
+
+
+    <div class="birthday">
+
+        <div class="cake">🎂</div>
+
+        <h2>Happy Birthday ❤️</h2>
+
+        <p>
+            May your life always be filled with<br>
+            love, happiness & beautiful memories ✨
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- Optional music button -->
+<button class="music-btn" onclick="toggleMusic()" id="musicButton">
+    🎵
+</button>
+
+<!--
+IMPORTANT:
+For music, upload an MP3 named "music.mp3"
+to the SAME GitHub repository.
+
+Then it will play when the visitor taps the music button.
+-->
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* Create floating hearts */
+
+const heartsContainer = document.getElementById("hearts");
+
+const heartSymbols = ["❤️","💕","💗","💖","💘","💝","🌹"];
+
+for (let i = 0; i < 35; i++) {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+    heart.style.left = Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (7 + Math.random() * 10) + "s";
+
+    heart.style.animationDelay =
+        (Math.random() * 10) + "s";
+
+    heartsContainer.appendChild(heart);
+}
+
+
+/* Open letter */
+
+function openLetter() {
+
+    const opening = document.getElementById("opening");
+    const main = document.getElementById("main");
+
+    opening.classList.add("hide");
+
+    setTimeout(() => {
+        main.classList.add("show");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }, 500);
+
+}
+
+
+/* Music */
+
+let playing = false;
+
+function toggleMusic() {
+
+    const music = document.getElementById("music");
+    const button = document.getElementById("musicButton");
+
+    if (!playing) {
+
+        music.play()
+        .then(() => {
+            playing = true;
+            button.innerHTML = "🔊";
+        })
+        .catch(() => {
+            alert("Please upload music.mp3 to the same GitHub folder.");
+        });
+
+    } else {
+
+        music.pause();
+
+        playing = false;
+
+        button.innerHTML = "🎵";
+    }
+}
+
+</script>
+
+</body>
+</html>
